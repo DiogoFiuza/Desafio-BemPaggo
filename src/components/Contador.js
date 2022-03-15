@@ -8,9 +8,9 @@ export default function Contador(){
 
   return(
     <section className="counterContainer">
-      <button className="button" onClick={ () => setCounter( counter + 1)}><AiOutlinePlus/> </button>
-      <input className="inputValue" value={ counter } />
       <button className="button" onClick={ () => setCounter( counter - 1)}><AiOutlineMinus/></button>
+      <input className="inputValue" value={ counter } />
+      <button className="button" onClick={ () => setCounter( counter + 1)}><AiOutlinePlus/> </button>
     </section>
   )
 }

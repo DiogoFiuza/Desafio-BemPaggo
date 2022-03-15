@@ -1,6 +1,7 @@
 import '../style/Forms.css'
 import CheckBox from './CheckBox'
 import Contador from './Contador'
+import TextArea from './TextArea'
 
 export default function Forms(){
   return(
@@ -9,6 +10,8 @@ export default function Forms(){
       <CheckBox/>
       <h4>Quantos adesivos de cada?</h4>
       <Contador/>
+      <h4>Observações:</h4> 
+      <TextArea/>
     </section>
   )
 }
