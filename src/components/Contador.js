@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
+import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
+
+import '../style/Contador.css'
 
 export default function Contador(){
   const [counter, setCounter] = useState(0)
 
-  useEffect(() => {
-
-  })
-
   return(
-    <section>
-      <button onClick={ () => setCounter( counter + 1)}> + </button>
-      <input  value={ counter } />
-      <button onClick={ () => setCounter( counter - 1)}> - </button>
+    <section className="counterContainer">
+      <button className="button" onClick={ () => setCounter( counter + 1)}><AiOutlinePlus/> </button>
+      <input className="inputValue" value={ counter } />
+      <button className="button" onClick={ () => setCounter( counter - 1)}><AiOutlineMinus/></button>
     </section>
   )
 }
