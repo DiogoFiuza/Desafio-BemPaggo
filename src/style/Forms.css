@@ -1,0 +1,11 @@
+
+.fomsContainer{
+  display: flex;
+  margin-left: 10%;
+}
+
+.containerCheckbox{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
