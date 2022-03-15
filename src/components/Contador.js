@@ -1,19 +1,17 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 export default function Contador(){
-  const [count, setCount] = useState(0)
+  const [counter, setCounter] = useState(0)
+
+  useEffect(() => {
+
+  })
 
   return(
     <section>
-      <button 
-        className="plus"
-        onClick={() => setCount(count+1)}
-      >+</button>
-      <input type='number' value={count}/>
-      <button 
-        className="minus"
-        onClick={() => setCount(count+1)}
-      >-</button>
+      <button onClick={ () => setCounter( counter + 1)}> + </button>
+      <input  value={ counter } />
+      <button onClick={ () => setCounter( counter - 1)}> - </button>
     </section>
   )
 }

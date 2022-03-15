@@ -4,11 +4,11 @@ import Contador from './Contador'
 
 export default function Forms(){
   return(
-    <form className="formsContainer">
+    <section className="formsContainer">
       <h4>Quais adesivos:</h4>
       <CheckBox/>
       <h4>Quantos adesivos de cada?</h4>
       <Contador/>
-    </form>
+    </section>
   )
 }
