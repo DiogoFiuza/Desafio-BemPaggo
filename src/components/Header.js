@@ -1,4 +1,5 @@
 import React from "react";
+import { BsBoxSeam } from 'react-icons/bs';
 import '../style/Header.css';
 
 
@@ -11,6 +12,9 @@ function Header(){
         para compra de <br/>
         <b>Pacote de adesivos</b>
         </p> 
+      </div>
+      <div className="boxContainer">
+        <BsBoxSeam className="boxImg"/>
       </div>
     </header>
   )
