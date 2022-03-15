@@ -1,11 +1,7 @@
 
-.fomsContainer{
-  display: flex;
-  margin-left: 10%;
-}
-
-.containerCheckbox{
+.formsContainer{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  margin-left: 10%;
+  margin-right: 10%;
 }

@@ -1,23 +1,11 @@
 import '../style/Forms.css'
+import CheckBox from './CheckBox'
 
 export default function Forms(){
   return(
-    <form className="fomsContainer">
-      <label className="containerCheckbox">
-        <h4>Quais adesivos:</h4>
-        <label>
-          <input type='checkbox' name='React'/>
-          React
-        </label>
-        <label>
-          <input type='checkbox' name='Vue'/>
-          Vue
-        </label>
-        <label>
-          <input type='checkbox' name='Angular'/>
-          Angular
-        </label>
-      </label>
+    <form className="formsContainer">
+      <h4>Quais adesivos:</h4>
+      <CheckBox/>
     </form>
   )
 }
