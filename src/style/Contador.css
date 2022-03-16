@@ -1,7 +1,7 @@
 .counterContainer{
   display: flex;
   font-size: 20px;
-  justify-content: space;
+  justify-content: center;
 
 }
 
@@ -15,10 +15,14 @@
 }
 
 .inputValue{
-  width: 20px;
+  width: 30px;
   flex-direction: column;
   font-size: large;
   border-radius: 10px;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.inputValue {
+  text-align: center;
 }
