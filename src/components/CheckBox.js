@@ -1,26 +1,33 @@
 import '../style/Checkbox.css'
 
 export default function CheckBox(){
+
+  const allIsChecked = () => {
+    const checkboxes = document.querySelectorAll('.checkbox');
+    let value = false;
+    checkboxes.forEach((e) => { if(e.checked === true) value = true });
+  }
+
   return(
     <label className="containerCheckbox">
         <label>
-          <input type='checkbox' name='React'/>
+          <input className='checkbox' onClick={ allIsChecked } type='checkbox' name='React'/>
           React
         </label>
         <label>
-          <input type='checkbox' name='Vue'/>
+          <input className='checkbox' onClick={ allIsChecked } type='checkbox' name='Vue'/>
           Vue
         </label>
         <label>
-          <input type='checkbox' name='Angular'/>
+          <input className='checkbox' onClick={ allIsChecked } type='checkbox' name='Angular'/>
           Angular
         </label>
         <label>
-          <input type='checkbox' name='JS'/>
+          <input className='checkbox' onClick={ allIsChecked } type='checkbox' name='JS'/>
           JavaScript
         </label>
         <label>
-          <input type='checkbox' name='Node'/>
+          <input className='checkbox' onClick={ allIsChecked } type='checkbox' name='Node'/>
           Node
         </label>
       </label>

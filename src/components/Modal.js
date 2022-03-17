@@ -1,15 +1,16 @@
-import React from "react";
+import { useContext } from 'react';
+import MyContext from '../contexts/myContext';
 import '../style/Modal.css'
-import img from '../images/capa_adesivos.jpg'
 
-export default function Modal({ finished }){
+export default function Modal(){
+  const { setVisible } = useContext(MyContext)
   return(
-    <div onClick={finished} className="modal">
+    <div onClick={() => setVisible(false)} className="modal">
       <div className="modalContainer">
           <h1 className="titleModel">Obrigado pela preferência!😄</h1>
-          <img className="imgAdesivos" src={img} alt='imagem de adesivos'/>
+          <img className="imgAdesivos" src='../images/capa_adesivos.jpg' alt='imagem de adesivos'/>
           <p>Dentro de poucos dias você receberá seu pedido</p>
-          <button onClick={finished} className="finishButton">Finalizar</button>
+          <button onClick={() => setVisible(false)} className="finishButton">Finalizar</button>
       </div>
     </div>
   )
