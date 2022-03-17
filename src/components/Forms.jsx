@@ -1,10 +1,8 @@
 import '../style/Forms.css';
 import React from 'react';
 import CheckBox from './CheckBox';
-import Contador from './Contador';
+import Counter from './Counter';
 import TextArea from './TextArea';
-
-// Roboto
 
 export default function Forms() {
   return (
@@ -12,7 +10,7 @@ export default function Forms() {
       <h4>Quais adesivos:</h4>
       <CheckBox />
       <h4>Quantos adesivos de cada?</h4>
-      <Contador />
+      <Counter />
       <h4>Observações:</h4>
       <TextArea />
     </section>

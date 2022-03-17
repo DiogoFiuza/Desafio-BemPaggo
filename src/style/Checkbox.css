@@ -4,3 +4,11 @@
   display: flex;
   flex-direction: column;
 }
+
+.checkbox {
+  accent-color: #2E3576;
+}
+
+.containerCheckbox label, .checkbox{
+  cursor: pointer;
+}

@@ -8,7 +8,7 @@ export default function ModalError() {
     <div onClick={() => setVisible(false)} className="modalError">
       <div className="modalErrorContainer">
         <h1 className="titleModelError">Ooopss...Algo deu errado!</h1>
-        <img className="imgError" src="" alt="imagem de adesivos" />
+        <img className="imgError" src="./images/emoji.png" alt="imagem de error" />
         <p>Vamos tentar novamente ?</p>
         <button type="button" onClick={() => setVisible(false)} className="finishButton">OK</button>
       </div>

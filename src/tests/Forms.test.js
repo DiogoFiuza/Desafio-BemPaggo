@@ -2,7 +2,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import App from '../App';
 import Header from '../components/Header'
 import CheckBox from '../components/CheckBox'
-import Contador from '../components/Contador'
+import Counter from '../components/Counter.jsx'
 
 
 describe('Renderização do componente Header', () => {
@@ -14,8 +14,8 @@ describe('Renderização do componente Header', () => {
 
   it('Verifica se possui o ícone da caixa no header', () => {
     render(<Header />);
-    const imagem = screen.getByTestId('imagem')
-    expect(imagem).toBeInTheDocument();
+    const image = screen.getByTestId('image')
+    expect(image).toBeInTheDocument();
   })
 });
 
@@ -34,7 +34,7 @@ describe('Renderização do componente Checkbox', () => {
 });
 
 
-describe('Renderização do componente Contador', () => {
+describe('Renderização do componente Counter', () => {
   it('Verifica ser possui a pergunta "Quais adesivos:"', () => {
     render(<App />);
     const question = screen.getByText(/Quantos adesivos de cada/i);
@@ -42,7 +42,7 @@ describe('Renderização do componente Contador', () => {
   })
 
   it('Verifica a existência e a funcionalidade do botão "mais"', () => {
-    render(<Contador />);
+    render(<Counter />);
     const plusButton = screen.getByTestId('plus');
     expect(plusButton).toBeInTheDocument();
     const quantity = screen.getByTestId('result');
@@ -54,7 +54,7 @@ describe('Renderização do componente Contador', () => {
   })
 
   it('Verifica a existência e a funcionalidade do botão "menos"', () => {
-    render(<Contador />);
+    render(<Counter />);
     const plusButton = screen.getByTestId('plus');
     expect(plusButton).toBeInTheDocument();
     const minusButton = screen.getByTestId('minus');
