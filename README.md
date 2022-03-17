@@ -28,6 +28,7 @@
   <li>React Testing Library</li>
   <li>Jest</li>
   <li>React Hooks</li>
+  <li>Context Api</li>
   <li>JavaScript</li>
   <li>CSS</li>
   <li>HTML</li>
