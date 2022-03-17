@@ -13,9 +13,13 @@ export default function Contador(){
 
   return(
     <section className="counterContainer">
-      <button className="button" onClick={ () => travaZero() }><AiOutlineMinus/></button>
-      <input className="inputValue" value={ counter } />
-      <button className="button" onClick={ () => setCounter( counter + 1) }><AiOutlinePlus/> </button>
+      <button data-testId='minus' className="button" onClick={ () => travaZero() }>
+        <AiOutlineMinus/>
+      </button>
+      <input data-testId='result' className="inputValue" value={ counter } />
+      <button data-testId='plus' className="button" onClick={ () => setCounter( counter + 1) }>
+        <AiOutlinePlus/>
+      </button>
     </section>
   )
 }

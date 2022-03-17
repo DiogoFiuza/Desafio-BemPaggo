@@ -14,7 +14,7 @@ function Header(){
         </p> 
       </div>
       <div className="boxContainer">
-        <BsBoxSeam className="boxImg"/>
+        <BsBoxSeam data-testid="imagem" className="boxImg"/>
       </div>
     </header>
   )
