@@ -1,8 +1,9 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import App from '../App';
 import Header from '../components/Header'
+import Main from '../pages/Main';
 import CheckBox from '../components/CheckBox'
-import Contador from '../components/Contador'
+import Counter from '../components/Counter.jsx'
 
 
 describe('Renderização do componente Header', () => {
@@ -14,8 +15,8 @@ describe('Renderização do componente Header', () => {
 
   it('Verifica se possui o ícone da caixa no header', () => {
     render(<Header />);
-    const imagem = screen.getByTestId('imagem')
-    expect(imagem).toBeInTheDocument();
+    const image = screen.getByTestId('image')
+    expect(image).toBeInTheDocument();
   })
 });
 
@@ -27,14 +28,17 @@ describe('Renderização do componente Checkbox', () => {
   })
 
   it('Verifica se possui as 5 opções de adesivo', () => {
-    render(<CheckBox />);
-    const reactOption = screen.getByLabelText('React');
-    expect(reactOption.name).toEqual('React');
+    render(<App />);
+    expect(screen.getByText(/React/i)).toBeInTheDocument();
+    expect(screen.getByText(/Vue/i)).toBeInTheDocument();
+    expect(screen.getByText(/Angular/i)).toBeInTheDocument();
+    expect(screen.getByText(/JavaScript/i)).toBeInTheDocument();
+    expect(screen.getByText(/Node/i)).toBeInTheDocument();    
   })
 });
 
 
-describe('Renderização do componente Contador', () => {
+describe('Renderização do componente Counter', () => {
   it('Verifica ser possui a pergunta "Quais adesivos:"', () => {
     render(<App />);
     const question = screen.getByText(/Quantos adesivos de cada/i);
@@ -42,7 +46,7 @@ describe('Renderização do componente Contador', () => {
   })
 
   it('Verifica a existência e a funcionalidade do botão "mais"', () => {
-    render(<Contador />);
+    render(<App />);
     const plusButton = screen.getByTestId('plus');
     expect(plusButton).toBeInTheDocument();
     const quantity = screen.getByTestId('result');
@@ -54,7 +58,7 @@ describe('Renderização do componente Contador', () => {
   })
 
   it('Verifica a existência e a funcionalidade do botão "menos"', () => {
-    render(<Contador />);
+    render(<App />);
     const plusButton = screen.getByTestId('plus');
     expect(plusButton).toBeInTheDocument();
     const minusButton = screen.getByTestId('minus');
@@ -70,5 +74,30 @@ describe('Renderização do componente Contador', () => {
     expect(quantity.value).toBe('0');
   })
 });
+
+describe('Verifica menssagem de erro', () => {
+  it('Verifica se finaliza a compra sem informar o adesivo e a quantidade', () => {
+    render(<App/>);
+    const button = screen.getByText(/ENVIAR/i);
+    fireEvent.click(button);
+    expect(screen.getByText(/Ooopss/i)).toBeInTheDocument()
+  })
+})
+
+describe('Verifica menssagem de confirmação', () => {
+  it('Verifica se finaliza a compra informando o adesivo e a quantidade', () => {
+    render(<App/>);
+
+    const checkbock = screen.getByText(/React/i);
+    fireEvent.click(checkbock);
+
+    const addButton = screen.getByTestId('plus');
+    fireEvent.click(addButton);
+
+    const button = screen.getByText(/ENVIAR/i);
+    fireEvent.click(button);
+    expect(screen.getByText(/Obrigado/i)).toBeInTheDocument()
+  })
+})
 
 

@@ -1,26 +1,35 @@
-.counterContainer{
+.counterContainer {
   display: flex;
   font-size: 20px;
   justify-content: center;
 
 }
 
-.button{
+.button {
   background-color: #2F3576;
   border-radius: 50px;
-  color: rgb(238, 230, 245);
+  color: rgb(253, 253, 253);
   width: 30px;
   height: 30px;
   justify-items: center;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease-in-out;
 }
 
-.inputValue{
+.button:hover {
+  background-color: #525aad;
+}
+
+.inputValue {
   width: 30px;
+  background-color: #DDE3E9;
   flex-direction: column;
   font-size: large;
   border-radius: 10px;
   margin-left: 5px;
   margin-right: 5px;
+  border: none;
 }
 
 .inputValue {
