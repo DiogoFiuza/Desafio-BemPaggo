@@ -4,7 +4,7 @@ import img from '../images/capa_adesivos.jpg'
 
 export default function Modal({ finished }){
   return(
-    <div className="modal">
+    <div onClick={finished} className="modal">
       <div className="modalContainer">
           <h1 className="titleModel">Obrigado pela preferência!😄</h1>
           <img className="imgAdesivos" src={img} alt='imagem de adesivos'/>
