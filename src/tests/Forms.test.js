@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import App from '../App';
 import Header from '../components/Header'
+import Main from '../pages/Main';
 import CheckBox from '../components/CheckBox'
 import Counter from '../components/Counter.jsx'
 
@@ -27,9 +28,12 @@ describe('Renderização do componente Checkbox', () => {
   })
 
   it('Verifica se possui as 5 opções de adesivo', () => {
-    render(<CheckBox />);
-    const reactOption = screen.getByLabelText('React');
-    expect(reactOption.name).toEqual('React');
+    render(<App />);
+    expect(screen.getByText(/React/i)).toBeInTheDocument();
+    expect(screen.getByText(/Vue/i)).toBeInTheDocument();
+    expect(screen.getByText(/Angular/i)).toBeInTheDocument();
+    expect(screen.getByText(/JavaScript/i)).toBeInTheDocument();
+    expect(screen.getByText(/Node/i)).toBeInTheDocument();    
   })
 });
 
@@ -42,7 +46,7 @@ describe('Renderização do componente Counter', () => {
   })
 
   it('Verifica a existência e a funcionalidade do botão "mais"', () => {
-    render(<Counter />);
+    render(<App />);
     const plusButton = screen.getByTestId('plus');
     expect(plusButton).toBeInTheDocument();
     const quantity = screen.getByTestId('result');
@@ -54,7 +58,7 @@ describe('Renderização do componente Counter', () => {
   })
 
   it('Verifica a existência e a funcionalidade do botão "menos"', () => {
-    render(<Counter />);
+    render(<App />);
     const plusButton = screen.getByTestId('plus');
     expect(plusButton).toBeInTheDocument();
     const minusButton = screen.getByTestId('minus');
@@ -70,5 +74,30 @@ describe('Renderização do componente Counter', () => {
     expect(quantity.value).toBe('0');
   })
 });
+
+describe('Verifica menssagem de erro', () => {
+  it('Verifica se finaliza a compra sem informar o adesivo e a quantidade', () => {
+    render(<App/>);
+    const button = screen.getByText(/ENVIAR/i);
+    fireEvent.click(button);
+    expect(screen.getByText(/Ooopss/i)).toBeInTheDocument()
+  })
+})
+
+describe('Verifica menssagem de confirmação', () => {
+  it('Verifica se finaliza a compra informando o adesivo e a quantidade', () => {
+    render(<App/>);
+
+    const checkbock = screen.getByText(/React/i);
+    fireEvent.click(checkbock);
+
+    const addButton = screen.getByTestId('plus');
+    fireEvent.click(addButton);
+
+    const button = screen.getByText(/ENVIAR/i);
+    fireEvent.click(button);
+    expect(screen.getByText(/Obrigado/i)).toBeInTheDocument()
+  })
+})
 
 

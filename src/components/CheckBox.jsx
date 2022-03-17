@@ -19,19 +19,19 @@ export default function CheckBox() {
         React
       </label>
       <label htmlFor="Vue">
-        <input className="checkbox" onClick={allIsChecked} type="checkbox" name="Vue" />
+        <input className="checkbox" onClick={allIsChecked} type="checkbox" id="Vue" />
         Vue
       </label>
       <label htmlFor="Angular">
-        <input className="checkbox" onClick={allIsChecked} type="checkbox" name="Angular" />
+        <input className="checkbox" onClick={allIsChecked} type="checkbox" id="Angular" />
         Angular
       </label>
       <label htmlFor="JS">
-        <input className="checkbox" onClick={allIsChecked} type="checkbox" name="JS" />
+        <input className="checkbox" onClick={allIsChecked} type="checkbox" id="JS" />
         JavaScript
       </label>
       <label htmlFor="Node">
-        <input className="checkbox" onClick={allIsChecked} type="checkbox" name="Node" />
+        <input className="checkbox" onClick={allIsChecked} type="checkbox" id="Node" />
         Node
       </label>
     </div>

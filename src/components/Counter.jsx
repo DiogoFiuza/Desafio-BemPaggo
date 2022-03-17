@@ -14,10 +14,10 @@ export default function Counter() {
 
   return (
     <section className="counterContainer">
-      <button type="button" data-testId="minus" className="button" onClick={() => setFloor()}>
+      <button type="button" data-testid="minus" className="button" onClick={() => setFloor()}>
         <AiOutlineMinus />
       </button>
-      <input data-testId="result" className="inputValue" value={counter} />
+      <input data-testid="result" className="inputValue" value={counter} />
       <button type="button" data-testId="plus" className="button" onClick={() => setCounter(counter + 1)}>
         <AiOutlinePlus />
       </button>
