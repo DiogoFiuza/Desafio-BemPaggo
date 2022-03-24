@@ -8,7 +8,7 @@
 <p>O objetivo deste desafio é implementar um formulário para cadastro de compras de adesivos conforme a imagem a seguir:</p>
 
 <div align="center">
-  <img src='https://www.bempaggo.com.br/wp-content/uploads/2022/03/desafio_1-e1647259797866-1024x707.png' height='500'/>
+  <img src='./public/desafio.png' height='500'/>
 </div>
 
 ## Como rodar a aplicação:
